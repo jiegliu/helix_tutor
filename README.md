@@ -12,8 +12,9 @@ we list some text models what a user need, not all but enough for users.
         many lines may be out of screen(text has too many rows/lines)
         also many columns may be out of screen(rows are too long)
     3. storage in computer <- 1D asciis or unicodes format codes
-        some codes may
+        some codes may invisible: space, enter, tab...
     4. for show(to be) <- screen cells, may occupied by codes, or nothing
+    
 cursor: select one cell(code) on screen
 
 one thing/staff/object may have different aspects/descriptions/explanations:

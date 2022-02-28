@@ -7,8 +7,8 @@ welcome.
 one info may have different format for different usage:
 
 we list some text models what a user need, not all but enough for users.
-    1. ez for man to understand <- 2D logical text
-    2. ez for man to read on screen <- 2D screen text: partial 2D logical text
+    1. ez for man to understand via brain <- 2D logical text
+    2. ez for man to read on screen by eye via brain  <- 2D screen text: partial 2D logical text
         many lines may be out of screen(text has too many rows/lines)
         also many columns may be out of screen(rows are too long)
     3. storage in computer <- 1D asciis or unicodes format codes

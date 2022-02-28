@@ -42,7 +42,7 @@ one thing/staff/object may have different aspects/descriptions/explanations:
 it all depends on how u think of it, what u need, which model is more ez or efficient
     to handle ur job.
 
-selection
+move
 
 h/l
     is
@@ -71,16 +71,117 @@ j/k
                 
     is not
         1D codes, though they are both 1D, but one is full 1D, one is sub dimension of 2D,
-            need work with another 1D to make the whole text.
+            need work with another 1D(horizontal) to make the whole text.
 !!
     set "line-number = "relative"" to moving in lines
     rather 1024gg, now we can handle lines only in screen use relative line number
         we operate on screen lines, why start counting at invisible logical text lines!
+if import whole mode of every dimension's directions of 1D and 2D, will need more keys.
+    so helix use hljk as 4 common sharing part of basic, which is not full, but pay less, take more
+which cause a problem, exceptions corner-case...e.g. horizontal move leftest/rightest is not consistant
+with jk as hl when meet ends. so u will not use hhhhh to meet leftest char, but this is rare usage.
+ we can use another model to produce this result, not consistant but first thing first,
+so lefest is gh(chars of text) or gs(visible chars of text), instead of hhhhhh
+better solution, though breaking the consistancy.perfect is shit. we only wanna pay less to produce more
+
+wbe
+
+hl is not mainly on left or right meaning, it is marked more on measure word 1 cell.
+    so 8l is rightward 8 cell
+w is also right(forward) a word start, it is marked more on measure word 1 word.
+    so 8w is rightward 8 words
+
+why not 2 w is go on right 2nd word, select the word???
+cuz of current is the 1st word, ugly impl
+
+when with spaces
+    when cursor in a word
+        w e dosen't mainly mean word start or end, 
+            they both select from current cursor to the current word end(functional programming! brain-friendly)
+                which is that i wanna thinking in word not index or even 2-base data!! 
+                they are same on value, but not a brain-oriented data format.
+        e stay cursor on word end
+        w stay cursor on word end then go more with a space
+    when cursor not in a word
+        e moves with former space(if there has == if not a char start of line)
+        w moves with latter space(if there has == if not a char end of line)
+when without spaces
+    w are fk same with e!
+b is like mirror of w..
+    
+for plus info between foo bar lar!
+    wi, wa, ei, ea, wd, ed
+    w;d, wA-;
+
+use w with selecting latter space, use e with selecting former space 
+
+and here are ugly things, what human need to jump to next word, but it use index-impl rather 
+then human-brain-oriented-impl, it fk not jump to select next word but fk select a space over it.
+
+it's convenient for deleting when we auto has a space, but not for replacing.
+so go use e eee and then g back to choose the word! aha, ur welcome.
+actually there are too many needs on moving a word, so we are basic two, plus eg, satisfy main usage.
+not that concise or brain-friendly to define word, word with space before and latter. 
+if so, need 3 keys on forward a word. but isn't it a w e eg??? just not that obvious
+so if these models are better to use , why use fking move index to next word start char!!
+these descriptions are shit that fk the brain, but letting itself simple, not simple for brain
+emacs use select space between word, if wanna replace or delete, need more like dw rw?
+sounds better...helix has pros on default e , it satisfy most need, then we need d or c is enough.
+not consistant, but enough to use...
+
+use e as possible as u can, when delete a word
+(why space existed? it is usually typed for the latter word) so why u use w?
+and when replace a word, ebc is better than wc with xxx then add a space back
+
+w is for gh then v3wd?
+
+fk stop blinking on black pop window, hot to turn prompt off???
+
+e; for edit last char of word
+wA-; for edit first char of word
+w if delete spaces if a line start with many spaces
+3e to jump approximately position, 3 is near e, ez to tap
+
+WBE
+    same usage of web(most with space part), cuz of there is no non-space parts..
+        it only stop at "space"....
+tTfT
+    single char search then move work in 1D codes
+        not like vim in 1D(horizontal line) of 2D screen
+    how to repeat???
+        shit A-.????????????? why not just one key?can work with multi-cursor and multi selection?
+            so can't use , and ;?  and work with .???
+        f"ec to change "hello"
+            it's different with 2f", whose current cursor changed, selection changed
+        2t"T" to change "hello world ahaha, slkjflk"
+            f"lt" seems better..
+        it's better select with a reverse order, start from the forwardest, then TF to backward
+            cuz of noise is in begining position, while in the end, their only ""));
+                if lucky only )
+    it also has a multi-line selection.hmmm, powerful
+    also x can't work with C? but X is fk what meaning works like x in C???
+G
+    i always think that G is a waste since there already exist a gg
+        which is beter then G: Shift-g, move two fingers, type and wait and release
+    i'll remap it into other staff
+so far upper-case HL is free for users to define
+    J for join, can't 2J???? fk stupid design. what is Join, Join is a line operator, of course
+        it repeat means multi line! it is not a delete or replace who has no selection information
+    K can't figure out what's meaning of it
+        sub select? what is keep???why not use select to select?
+g, go mode
+    
+
+
         
 ```
 
+aa
+bbb ccc
+ddd eee fff
+ggg hhh iii jjj
 
 delete
     
-    lskdjflskjaddfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffflksjlkjfalskjdflksjlkfdjalsjdfk
+lskdjflskjaddfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffflksjlkjfalskjdflksjlkfdjalsjdfk
     lkj ksljdflkjs

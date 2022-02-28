@@ -91,6 +91,10 @@ hl is not mainly on left or right meaning, it is marked more on measure word 1 c
 w is also right(forward) a word start, it is marked more on measure word 1 word.
     so 8w is rightward 8 words
 
+when we use w, there are 1 info discarded in vim, cursor and the selection from origin cursor to new curso
+which is kept in helix, good design, i just egc change the word, vim need key wce ...
+but if just deleting, better on helix, one key less then vim. but more brain calculating on space..
+
 why not 2 w is go on right 2nd word, select the word???
 cuz of current is the 1st word, ugly impl
 
@@ -170,8 +174,38 @@ so far upper-case HL is free for users to define
     K can't figure out what's meaning of it
         sub select? what is keep???why not use select to select?
 g, go mode
+    ga last accessed file
+    gm last modified file
+    
+    buffer
+        gn
+        gp
+    g.
+        last modification position of this file
+    gg
+    
+                gt
+    ~/foo.txt    gf(file)
+    
+    gh   gs                  gl 
+    
+                gc
+                
+                bar()         gd(definition)
+                
+                sum_of_apples gy(y, t, ai, type definition) ???
+                
+                &foo          gr(reference)
+                
+                struct        gi(impl)
+                gb
+    
+    ge(end)
     
 
+well, i would let u/d upmost instead of top, so we can use type definition:gt
+or why not gT with gt?
+still there exist many empty key, which is good to define user's key
 
         
 ```

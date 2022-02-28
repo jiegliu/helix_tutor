@@ -1,5 +1,7 @@
 # helix_tutor
 
+```
+
 welcome.
 
 one info may have different format for different usage:
@@ -74,3 +76,10 @@ j/k
     rather 1024gg, now we can handle lines only in screen use relative line number
         we operate on screen lines, why start counting at invisible logical text lines!
         
+```
+
+
+delete
+    
+    lskdjflskjaddfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffflksjlkjfalskjdflksjlkfdjalsjdfk
+    lkj ksljdflkjs

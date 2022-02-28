@@ -31,11 +31,11 @@ one thing/staff/object may have different aspects/descriptions/explanations:
     1. the cursor pointed to a cell of 2D screen
     2. the cursor pointed to a code of 1D codes
     3. the cursor pointed to a start char of word
-    4. the cursor pointed to a start char of line
-    5. the cursor pointed to a start char of fn key word
-    6. the cursor pointed to a start char of line 18
-    7. the cursor pointed to a start char named "f"
-    8. the cursor pointed to a start char of a fn which has a debug info
+    4. the cursor pointed to the leftest char of line
+    5. the cursor pointed to a fn
+    6. the cursor pointed to a line 18
+    7. the cursor pointed to a char named "f"
+    8. the cursor pointed to a fn which has a debug info
     9. the cursor pointed to a line below the comment where i wanna replace the info!
     ...
 

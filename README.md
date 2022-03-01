@@ -149,7 +149,7 @@ w if delete spaces if a line start with many spaces
 WBE
     same usage of web(most with space part), cuz of there is no non-space parts..
         it only stop at "space"....
-tTfT
+tTfF
     single char search then move work in 1D codes
         not like vim in 1D(horizontal line) of 2D screen
     how to repeat???
@@ -173,6 +173,7 @@ so far upper-case HL is free for users to define
         it repeat means multi line! it is not a delete or replace who has no selection information
     K can't figure out what's meaning of it
         sub select? what is keep???why not use select to select?
+tell me, why 88gg not with selection? need add v? while others move has selection???
 g, go mode
     ga last accessed file
     gm last modified file
@@ -207,6 +208,29 @@ well, i would let u/d upmost instead of top, so we can use type definition:gt
 or why not gT with gt?
 still there exist many empty key, which is good to define user's key
 
+A-: make sure forward selection?
+how this matters? what usage? there only FTB with backward selection, so what? make forward?
+and then what?since there is A-; to reverse select?
+
+only difference is that A-; is a switch, may cause different result
+
+but A-: will only make one result: in two chars, may u don't see screen clearly which is selected,
+so u use A-: to make sure u choose the forwardmost one, or then A-; to reverse it...
+
+why not define this in ctrl-;! why shift-alt-;!
+
+c-u c-d half screen up/down
+c-i c-o, jump in, out (2 direction of 1D jump list)
+    in powershell, c-i didn't work, may confilict with others..
+
+v     visual select mode
+g
+m    match mode
+:     run command mode
+z    view mode
+Z    sticky z???
+     space mode
+    
         
 ```
 

@@ -186,7 +186,7 @@ g, go mode
     gg
     
                 gt
-    ~/foo.txt    gf(file)
+    ~/foo.txt    gf(file) can't 3gf? or select multi path to open multi files???
     
     gh   gs                  gl 
     
@@ -219,9 +219,25 @@ so u use A-: to make sure u choose the forwardmost one, or then A-; to reverse i
 
 why not define this in ctrl-;! why shift-alt-;!
 
+sometimes, keymap doc is the final result, like 2-base program according to source code,
+ u may read it, u may puzzled it
+cuz u r human, and how program became/evolve to final format, this is unknew to u.
+
+u don't know why it is like this or that, what pros&&cons, which better. what u read is the final
+result to use, of couse, u can just remember it, but that is ez to forget. 
+at least for me, i will forget the unreasonable things.so i have to find out why...
+
+plus, sometimes u don't understand source code, cuz the source code is not that source. it is some
+level of 2-base program, the original thinking and processing is in developer's brain,
+and the genius "source code" is not the "source code" u see in github, it is in brains of architechture
+of who build them. so you need reverse the final result, figure out why it became like this.
+
 c-u c-d half screen up/down
+    i wonder why this can'd count? e.g. 2 c-u? though it is merely usage
+    where is go last cursor position???or cancel the selection current made, back to last selection?
+    ctrl-. also works on adding? not deleting repeat?
 c-i c-o, jump in, out (2 direction of 1D jump list)
-    in powershell, c-i didn't work, may confilict with others..
+    in powershell, c-i didn't work, may confilict with others key bindings..
 
 v     visual select mode
 g
@@ -230,13 +246,23 @@ m    match mode
 z    view mode
 Z    sticky z???
      space mode
+
+in normal brain, what human know, is that, i see apple, and i'm thinking, i wanna eat it!
+so, why helix, choose 2wd, not d2w? when we see text on screen, we have already have the concept
+where to delete, so just direct delete them!see? delete them! not them delete!!!! 
+this design made me no freedom of what exist in my brain. which is, i know, you know, some language
+design like i apple eat format, but not mainly language, let's face the fact, english is the first-class
+supported in the world, and helix don't support? it's like qwerty vs colemak, may colemak sounds or tested
+better to new users, but for a man who have used qwerty, colemak is not a better choice. the same, in our
+brain, there do has a delete 2 words pattern, and the software don't help me to finish it, it ask me to
+do the translating job, fk my brain? who work for who?
     
         
 ```
 
 aa
 bbb ccc
-ddd eee fff
+ddd eee 
 ggg hhh iii jjj
 
 delete

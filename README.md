@@ -74,6 +74,7 @@ j/k
             need work with another 1D(horizontal) to make the whole text.
 !!
     set "line-number = "relative"" to moving in lines
+        // u may go doc to set as how official defined, here i only wanna mention idea, concept
     rather 1024gg, now we can handle lines only in screen use relative line number
         we operate on screen lines, why start counting at invisible logical text lines!
 if import whole mode of every dimension's directions of 1D and 2D, will need more keys.
@@ -188,7 +189,7 @@ g, go mode
                 gt
     ~/foo.txt    gf(file) can't 3gf? or select multi path to open multi files???
     
-    gh   gs                  gl 
+    gh   gs                  gl where is go char: /n? as /n is leftmost char??? new key or f /n?
     
                 gc
                 
@@ -256,16 +257,296 @@ supported in the world, and helix don't support? it's like qwerty vs colemak, ma
 better to new users, but for a man who have used qwerty, colemak is not a better choice. the same, in our
 brain, there do has a delete 2 words pattern, and the software don't help me to finish it, it ask me to
 do the translating job, fk my brain? who work for who?
+
+C-s add cursor to jump list?? then why just letting me to jump cursor??why definition of jump list exclude
+    cursor position?
+
+i know i know, when i know part of helix, some my thinking is not that correct, cuz for a complex staff,
+u'll always have puzzle part. may helix handle it in a nother model better, but from now, i have to
+rely on these questions, may fault in future when i learned more on helix, but it is neccesary.
+
+why u choose this over that, cuz it powered u, u became more powerful, more freedom to control the world.
+
+but the helix is too young at this moment, but obviously, its key mapping and fn are much better than
+default of vim or emacs. but at now, vim/emacs have plugins, which i didn't see in helix...
+
+only few config i can free define. not that much free. e.g. define d2w d2b, since in helix w don't mean word
+but forward by a word, b mean backward by a word, h mean backward by a char, not left.
+when model has exception, e.g. u think h is left, u lack of other model such like measure word: cell/word/line
+, h is not only left, but forward a cell.w is not word, it's forward a word, and impl is to the word end or
+if with a space, included.
+
+see, it it not single element, it's combination of many meaning.
+
+every choice has cons and pros, helix choose consistancy, but not to the most usage style, consistant to
+a second syntax, which puzzled me. is the author born in a country that treat En/US as enemy?
+and ur language is  i-apple-eat style? as for my countries, China, the old language in history has the
+part like i-apple-eat style, but modern language is common i eat apple style since 1911 approximately.
+
+but since custom config emacs works like helix may pay too much time, i would choose to tolerate
+this design of 2wd of helix at the moment. or maybe when possible, branch helix or add a plugin?
+
+see, i-apple-eat or i-eat-apple or apple-eat-i or apple-i-eat or eat-apple-i or eat-i-apple
+are all same level ez-to-understand to computer, but for a man who used to i-eat-apple,
+i-eat-apple is a better choice, not cuz of it's better, but it's better for me
+it's better for me not cuz of it's better, cuz of i've choosen it, then it is better.
+
+changes
+r
+    replace selection to same 1 char
+        // how weird it is...
+    if u select 1 char, then normal replace
+    if u select multi char, then change all selection to same 1 char
+    again, can't 2r, which is fk not good enough!
+    what if u wanna replace one by one?
+        no way...use change to broke the screen representation of text
+        vlr? nope, this changed all to same one
+        vlc?, god, it worked, but ur brain will need to remember u need type 2 chars.
+            which should letting computer promp u to do the job!!!!!!!
+R
+    worked like paste in GUI, u choose something, then replace with copyed content
+    so it's like pP, not R
+~
+    upper-case lower-case switch {a, A} -> {A, a}
+`
+    to lower, {A} -> {a}
+A-`
+    to upper, {a} -> {A}
+
+where is Ctrl-`?, since this key is about upper/lower case
+    how about set this to a format: 
+        {applePrice, ApplePrice, apple-price...} -> {apple_price} 
+        rust style? sounds good huh?
+i
+    insert before selection
+        it's different from vim to insert to cursor cell
+    so if u wanna change on cursor cell after a w, u need ; to cancel selection u made
+        and it turn to default min selection -> 1 cell
+a
+    after
+I
+    xi VS shift-i?
+A
+    xa VS shift-a?
+o
+    new line after selection, then inser
+    how about add an empty line and just stay in normal mode?
+        ctrl-o?    why not just goto mode for go jump-list cursor-list?
+                            hyper-link? and cursor-list?
+                                what 99gg f; ? they are corsor move or jump move?
+        alt-o?
+O
+.
+    repeat last change??
+        change???
+            add?
+            delete? why delete with its selection is not a change?
+            replace? r is not treat as change???
+        change only include in insert mode?
+            abc add
+            backspace
+        what about other mode repeat?
+u/U
+    undo/redo
+        why undo treat delete replace as change? not consistant with .
+a-u/a-U
+    real undo/redo, not single branch of changes, but all changes as an array, back or forward
+y
+    where is Y
+    sd
+p/P
+cursor     paste b/a selection
+    yank a word
+        paste on line before? (actrually , no need of this goal while coding...)
+                xPa enter?????? so fk complex?
+                O,ESC,h,p
+                O,ESC,P?
+    selection position
+        if cursor is on start of a line, use P to paste before line
+        if cursor is on end of a line, use p to paste to create next line
+    yank a line
+        just pP
+"
+    clipboard index, choose which to copy/paste
+><
+    finally, 2> worked.....
+        tell me, u give in the usage? > is just a verb, and can add count before it???
+        finally not consistant with [count] selection verb???
+        go impl my d2w pattern!
+=
+    format 
+d
+    it's a cut(Ctrl-x) in windows,  though u can use cut to delete
+    delete selection, and in 1 line, latter chars will auto move to left
+    why can't backspace work??? in normal mode???
+    also ctrl-h not work in normal mode??? 
+        if code too many years, u will like Ctrl-h
+        it won't fold ur hand wrist in far-away backspace, less pain
+            if ur little finger pain
+            remap you space's tap-state to space while held-state to ctrl
+            or buy kinesis advantage 2!!!
+a-d
+    pure delete(detele), no auto copy with delete content
+    useful when u wanna paste something while need to delete something first.
+c
+    change-selection
+     === di
+a-c
+    c without copy
+c-a/c-s
+    puzzled me, what's this?
+    object ? word? line? where?
+Q
+    macro Q star/stop
+    "aQebc, ESC, Q     ===  
+    how to cancel macro to store in a register
+    how to stay in insert mode? use A-Q for stop macro?
+q
+    macro call()
+    "aq
+    maw can handle more general cases.
+        eg or ge, sometimes eg's e will go next word if cursor on end of a word
+use the most useful features, leave out the others, or u loose all if u wanna all
+
+thus, features or keys are in one list, but they are not in same-level importance.
+
+if a feature the developers didn't even fix, let it be, perfect is shit.
+
+|
+    replace selection by command output
+    or call(selection) ?
+    showed failed in powershell
+list:
+    pwd
+    www.baidu.com
+a-| without output
+! insert before
+a-! append
+$ filter only return 0
+
+s
+    regext filter
+    sub selection
+S
+    split
+    divide
+a-s
+    split in new line
+&
+    align
+_
+    to deselect spaces!!! we! maw!
+;
+    cancel selection
+a-;
+    reverse cursor from target to base
+,
+    delete all other cursor
+a-,
+    delete 1 cursor
+C
+    multi selection on next line of current selection
+    e.g. wCC, well, not semantic, only same position on 2D screen
+    support w3C
+a-C
+    before
+()
+    puzzled me, i tried C or w to move cursor, not this usage, then for what?
+    ok, work in s mode, to choose one, 
+    but screen can't show difference as they all hlted, but corner column number changed
+a-( a-)
+    i don't need to figure it out..
+    let it be there
+%
+    select entire file
+    god, ggvge not select last line's other chars....
+    and where is my V?
+x
+    whole current ! line !, include /n
+X
+    puzzle me..o, yeah, when multi selection, it works like x
+    when after C, () to choose one line, x to select whole current line
+    if u wanna everyline, X 
     
+    why not just let X as choose backward next line???????
+    who need this difference of current line in multi cursor mode????
+        thus why X is X, not a backward x?
+J
+    can't support 2J
+    use xx then J
+K
+    puzzled me. since we have s and enter, why not use s again nest in s?
+    what's purpose of K? keep what? don't s keep the selection by default?
+
+    
+    what's purpose of K? keep what? don't s keep the selection by default?
+    hello helle helloa
+a-K
+    doesn't work as i thought it won't just hlt like s, it will remove
+c-c
+    comment switch
+a-k
+    extend to parent node
+    vgld???????
+        not d$????
+a-j
+    shrink
+a-h/a-l
+    sibling note
+/ ?
+    n N
+    * selection -> register \
+        e.g.     /\
+z view mode
+    zz === zc waste?? for consistency
+    zt/c/b    like gt/c/b not go screen's line t/b/c, but let the curent line to be on screen
+        when you wanna change content, go g/t/b/c, when u wanna read detail about current line
+        zt/c/b
+    zm
+        like c in another 1D(horizontal) of 2D screen
+    zj/zk
+        fk not consistency with model zt/c/b, not operate on currentline, operate screen up/down???
+        
+        
+
+
+
+    
+
+
+
+
+
+            
+i'm not an object-lover, i'm a features-lover. if one feature is good for me, i love it.
+we all know object has cons and pros. but features are pure cons or pros. haha. cuz u
+get one object, u get all cons and pros. but if u get a feature, if it has cons, just
+difine a new feature to point to the pros...haha
+
+so once there are good staff in helix, i love them, but i will hate bad staff in helix.
+so to helix, there is no love or hate, to helix' developers, i always thanks them, they help me
+to wonder such an new editor, an editor better then default of vim/emacs.
+
+        
+m
+    maw selects spaces if only one word in a line???
+        wtf, it also match a word if has latter space or former space????
+        use be or eb
+    since eb is better then maw, why not keep maw to other most useful binding?
+    
+
         
 ```
 
-aa
-bbb ccc
-ddd eee 
-ggg hhh iii jjj
+8a
+bbb aac
+asd aaa8
+aaaaah iii j
+1
+2
+3
+4
 
-delete
     
 lskdjflskjaddfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffflksjlkjfalskjdflksjlkfdjalsjdfk
     lkj ksljdflkjs
